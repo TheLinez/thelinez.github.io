@@ -1,0 +1,194 @@
+/* Сброс стилей и глубокий космический фон */
+body {
+    background-color: #06050a;
+    color: #e2e1e9;
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Фиолетовое свечение на фоне */
+.purple-nebula {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(0,0,0,0) 70%);
+    filter: blur(60px);
+    z-index: -1;
+}
+.top-glow { top: -150px; left: -100px; }
+.bottom-glow { bottom: -150px; right: -100px; }
+
+/* Стеклянная карточка */
+.profile-card {
+    background: rgba(18, 16, 26, 0.65);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    backdrop-filter: blur(16px);
+    border-radius: 28px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    animation: cardEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cardEntrance {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Фиолетовая орбита аватара */
+.avatar-orbit {
+    position: relative;
+    width: 116px;
+    height: 116px;
+    margin: 0 auto 25px auto;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #13111c;
+    display: block;
+}
+
+/* Пульсирующий фиолетовый статус */
+.pulse-indicator {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 12px;
+    height: 12px;
+    background-color: #a78bfa;
+    border-radius: 50%;
+    border: 2px solid #06050a;
+    box-shadow: 0 0 8px #8b5cf6;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.5); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(139, 92, 246, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+}
+
+/* Инфо-блок */
+.username {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(to right, #fff, #c4b5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.purple {
+    background: rgba(139, 92, 246, 0.15);
+    color: #c4b5fd;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.badge.dark {
+    background: rgba(255, 255, 255, 0.04);
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.console-text {
+    font-family: monospace;
+    font-size: 13px;
+    color: #6d6a85;
+    margin: 0 0 30px 0;
+}
+
+.cyan-text { color: #a78bfa; font-weight: bold; }
+
+/* Кастомный список кнопок */
+.links-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.glass-button {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #d1d0da;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button:hover {
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.3);
+    color: #fff;
+    transform: translateX(4px);
+    box-shadow: -4px 0 20px rgba(139, 92, 246, 0.15);
+}
+
+.btn-icon {
+    font-size: 18px;
+    margin-right: 14px;
+    filter: grayscale(0.2);
+}
+
+.btn-text {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+/* Футер */
+.minimal-footer {
+    margin-top: 35px;
+    font-size: 12px;
+    color: #4c4962;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.meta-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #8b5cf6;
+    border-radius: 50%;
+}
